@@ -4,17 +4,18 @@ console.log(elencoMail);
 
 // chiedo all'utente di inserire la mail da verificare
 var mailVerifica = prompt("Inserisci qui, la tua e-mail");
-
+var risultato = 0;
 // controllo se l'accesso dell'utente è consentito
 for (var i = 0; i < elencoMail.length; i++) {
 
   if (mailVerifica === elencoMail[i]) {
    console.log("Si può accedere");
-   document.getElementById('stamp').innerHTML = "Accesso Autorizzato";
-   break;
-  }else {
-    console.log("No non può accedere");
-    document.getElementById('stamp').innerHTML = "Accesso NON Autorizzato";
+   risultato = 1;
   }
-
+// stampa se l'utente e autorizzato o non
+}
+if (risultato == 1){
+  document.getElementById('stamp').innerHTML = "Accesso Autorizzato";
+} else {
+  document.getElementById('stamp').innerHTML = "Accesso NON Autorizzato";
 }
